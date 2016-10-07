@@ -150,7 +150,7 @@ def report2(chat, message):
             "{2} 🔸 @{3} 🔸 {4}\n\n"
             "<b>SEGNALATO</b>: {0}\n"
             "<b>MOTIVAZIONE</b>: {1}"
-                .format(reported_info, reported_evidence, message.sender.name, str(message.sender.username),str(message.sender.id))
+                .format(reported_info, reported_evidence, message.sender.name, str(message.sender.username),str(message.sender.id)), syntax="HTML"
         )
         API.db.updateState(chat.id, "nullstate", 0)
 
@@ -318,7 +318,7 @@ def submit4(chat, message):
                             "\n<b>Nome gruppo</b>: {0}"
                             "\n<b>Link gruppo</b>: {1}"
                             "\n<b>Admin aggiuntivi</b>: {2}"
-                            "\n<b>Descrizione</b>: {3}".format(name, link, admins, description, message.sender.name, str(message.sender.id), str(message.sender.username))
+                            "\n<b>Descrizione</b>: {3}".format(name, link, admins, description, message.sender.name, str(message.sender.id), str(message.sender.username), syntax="HTML")
                     )
 
     text = (
